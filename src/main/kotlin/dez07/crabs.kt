@@ -12,4 +12,4 @@ fun align(input: String) = input.split(",").map { it.toInt() }.let { p ->
     (0..p.maxOrNull()!!).minOf { i -> p.sumOf { abs(it - i) } } }
 
 fun align2(input: String) = input.split(",").map { it.toInt() }.let { p ->
-    (0..p.maxOrNull()!!).minOf { i -> p.sumOf { (1..abs(it - i)).sum() } } }
+    (0..p.maxOrNull()!!).minOf { i -> p.sumOf { (abs(it - i) * (abs(it - i) + 1)) / 2 } } }
